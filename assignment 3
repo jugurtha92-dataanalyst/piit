@@ -1,0 +1,96 @@
+Assignment - 3
+## Assignment Details 
+- Create aotebook that uses the airquality dataset from pydataset and walks students through core pandas skills: structure, head/tail, selects, filters, missing values, duplicates, sorting, and simple aggregations.
+Practise Exercises
+- Inspecting structure: shape, dtypes, info, head, tail
+- Summary stats: describe, nunique
+- Missing values: isna, fillna (median/mean imputation)
+- Selecting columns/rows: lists, iloc, boolean masks, isin
+- Filtering with conditions and ranges 
+- Sorting by multiple columns
+- Duplicates: duplicated, drop_duplicates
+- Derived columns & categorization: arithmetic, pd.cut
+- Groupby & aggregation: agg, boolean-to-int counting
+- (Optional) quick sanity plots
+
+
+## Few Initial Commands to help you load the data
+# Install libraries in not availabl
+import pandas as pd
+import numpy as np
+from pydataset import data
+# Option A: Load directly from pydataset
+df = data('airquality')
+df.shape
+(153, 6)
+
+
+Tasks
+T1.
+Inspect the structure
+ Show the shape (rows, columns)
+ List column names and dtypes
+ Display the first 5 and last 5 rows
+Hints: df.shape, df.dtypes, df.columns, df.head(), df.tail(), df.info()
+
+T2.
+Basic summary stats
+  Produce descriptive statistics for numeric columns.
+  For each column, show number of unique values.
+Hints: df.describe(), df.nunique()
+
+T3.
+Missing values
+  Count missing values per column.
+  Create a copy df_mv where you impute:
+  Ozone: fill with the column median (numeric)
+  Solar.R: fill with the column mean (numeric)
+  Briefly comment: why might median be preferred over mean in some cases? (Add a markdown cell.)
+Hints: df.isna().sum(), df.copy(), fillna()
+
+T4.
+Selecting columns & rows
+  Select the columns: Ozone, Solar.R, Temp into a new DataFrame df_sel.
+  Select the first 10 rows of df_sel.
+  Select rows where Month is May (5) or June (6) only.
+Hints: Column lists, iloc, boolean masks, isin
+
+
+T5.
+Filtering & conditions
+  Filter rows where Ozone > 100 and Temp >= 85.
+  Filter rows where Solar.R is missing.
+  Filter rows for July (7) with Ozone between 50 and 100 (inclusive).
+Hints: Combined boolean conditions with &, |, parentheses; between()
+
+T6.
+Sorting
+  Sort the dataset by Ozone descending and Temp ascending (multi-column sort).
+  Sort the dataset by Month then Day to get chronological order.
+Hints: sort_values(by=[...], ascending=[...])
+
+
+T7 
+Duplicates
+  Check if there are any fully duplicated rows.
+  Intentionally create a few duplicate rows (e.g., duplicate first 3 rows) into df_dup.
+  Remove duplicates and report how many were removed.
+Hints: df.duplicated(), pd.concat([...]), drop_duplicates()
+
+T8. 
+Derived columns
+  Create a new column Temp_C converting Fahrenheit to Celsius.
+  Flag a new boolean column High_Ozone where Ozone > 100.
+  Create a categorical column Temp_Band with labels: Cool (<75F), Warm (75–85F), Hot (>85F).
+Hints: vectorized arithmetic, pd.cut()
+
+
+T9. 
+Groupby & aggregation
+  Group by Month and compute mean Ozone, median Solar.R, and max Temp.
+  Within each Month, count how many days have Ozone > 80.
+Hints: groupby(), agg({...}), Boolean to int conversion or np.sum()
+
+
+
+df.head(2)
