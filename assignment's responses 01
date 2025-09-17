@@ -1,1 +1,11 @@
-
+In my MetroCar project, I illustrated the difference between data analysis and analytics by examining the customer funnel 
+for a ride-sharing app. Using SQL, I performed data analysis to query and explore customer behavior at each stage 
+of the funnel—signup, activation, and retention—identifying drop-off points and usage patterns. 
+I then used Tableau to visualize these findings, providing clear, data-driven insights. 
+Transitioning into analytics, I interpreted these insights to suggest strategies for improving user engagement and conversion, 
+such as optimizing onboarding flows or targeting specific user segments. This showed how data analysis helps describe what is happening, 
+while analytics focuses on what actions to take next.
+And some of the actions sujested were: 
+    Reduce the prices during low demand 
+    Give some bonus to driver in some slow areas 
+    Give some coupons to riders to get more customers
